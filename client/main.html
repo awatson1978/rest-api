@@ -1,0 +1,88 @@
+<head>
+  <title>api-rest</title>
+</head>
+
+<body>
+  {{ mainLayout }}
+</body>
+
+<template name="mainLayout">
+  {{ yield }}
+</template>
+
+
+<template name="mainPage">
+  <div class="container">
+
+    <hr>
+    <button id="createButton" class="btn btn-success">CREATE</button>
+    <button id="readButton" class="btn btn-success">READ</button>
+    <button id="updateButton" class="btn btn-success">UPDATE</button>
+    <button id="deleteButton" class="btn btn-success">DELETE</button>
+    <button id="listButton" class="btn btn-success">LIST</button>
+    <hr>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4>API Rest Statistics</h4>
+      </div>
+      <div class="panel-body">
+        {{#with getConfigurationRecord}}
+          <div class="col col-lg-4">
+            <div id="rootPanelTile" class="centered panel panel-default">
+              <div class="count-text">{{getRootCount}}</div>
+              <div class="label-text">/</div>
+            </div>
+          </div>
+          <div class="col col-lg-4">
+            <div id="findPanelTile" class="centered panel panel-default">
+              <div class="count-text">{{getGetCount}}</div>
+              <div class="label-text">/find/</div>
+            </div>
+          </div>
+          <div class="col col-lg-4">
+            <div id="listPanelTile" id="rootPanelTile" class="centered panel panel-default">
+              <div class="count-text">{{getListCount}}</div>
+              <div class="label-text">/list/</div>
+            </div>
+          </div>
+          <div class="col col-lg-4">
+            <div id="insertPanelTile" class="centered panel panel-default">
+              <div class="count-text">{{getInsertCount}}</div>
+              <div class="label-text">/insert/</div>
+            </div>
+          </div>
+          <div class="col col-lg-4">
+            <div id="updatePanelTile" class="centered panel panel-default">
+              <div class="count-text">{{getUpdateCount}}</div>
+              <div class="label-text">/update/</div>
+            </div>
+          </div>
+          <div class="col col-lg-4">
+            <div id="deletePanelTile" class="centered panel panel-default">
+              <div class="count-text">{{getDeleteCount}}</div>
+              <div class="label-text">/delete/</div>
+            </div>
+          </div>
+        {{/with}}
+
+      </div>
+      <div class="panel-footer">
+          <a href="http://www.pentasyllabic.com">pentasyllabic.com</a>
+          <a href="http://github.com/awatson1978/meteor-cookbook">meteor cookbook</a>
+      </div>
+    </div>
+
+    <hr>
+
+    <ul class="list-group">
+      {{#each postsList }}
+      <li class="list-group-item">
+        {{title}} - {{text}}
+      </li>
+      {{/each}}
+    </ul>
+
+
+  </div>
+</template>
