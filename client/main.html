@@ -12,77 +12,240 @@
 
 
 <template name="mainPage">
-  <div class="container">
+  <div class="col col-md-6">
+    <div class="padded">
+      {{> restStats }}
+      {{> restApi }}
+    </div>
+  </div>
+  <div class="col col-md-6">
+    <div class="padded">
+      {{> databaseCollection }}
+    </div>
+  </div>
 
-    <hr>
-    <button id="createButton" class="btn btn-success">CREATE</button>
-    <button id="readButton" class="btn btn-success">READ</button>
-    <button id="updateButton" class="btn btn-success">UPDATE</button>
-    <button id="deleteButton" class="btn btn-success">DELETE</button>
-    <button id="listButton" class="btn btn-success">LIST</button>
-    <hr>
+</template>
 
+
+
+
+
+<template name="firstContentPanel">
+  <!--<div class="with-top-padding">-->
     <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4>API Rest Statistics</h4>
-      </div>
       <div class="panel-body">
-        {{#with getConfigurationRecord}}
-          <div class="col col-lg-4">
-            <div id="rootPanelTile" class="centered panel panel-default">
-              <div class="count-text">{{getRootCount}}</div>
-              <div class="label-text">/</div>
-            </div>
+        <div class="row">
+          <div class="col col-md-6">
+            <label for="titleInput">Title</label>
+            <input id="titleInput" type="text" class="form-control" placeholder="lorem ipsum..." />
           </div>
-          <div class="col col-lg-4">
-            <div id="findPanelTile" class="centered panel panel-default">
-              <div class="count-text">{{getGetCount}}</div>
-              <div class="label-text">/find/</div>
-            </div>
+          <div class="col col-md-6">
+            <label for="textInput">Text</label>
+            <input id="textInput" type="text" class="form-control" placeholder="lorem ipsum..." />
           </div>
-          <div class="col col-lg-4">
-            <div id="listPanelTile" id="rootPanelTile" class="centered panel panel-default">
-              <div class="count-text">{{getListCount}}</div>
-              <div class="label-text">/list/</div>
-            </div>
-          </div>
-          <div class="col col-lg-4">
-            <div id="insertPanelTile" class="centered panel panel-default">
-              <div class="count-text">{{getInsertCount}}</div>
-              <div class="label-text">/insert/</div>
-            </div>
-          </div>
-          <div class="col col-lg-4">
-            <div id="updatePanelTile" class="centered panel panel-default">
-              <div class="count-text">{{getUpdateCount}}</div>
-              <div class="label-text">/update/</div>
-            </div>
-          </div>
-          <div class="col col-lg-4">
-            <div id="deletePanelTile" class="centered panel panel-default">
-              <div class="count-text">{{getDeleteCount}}</div>
-              <div class="label-text">/delete/</div>
-            </div>
-          </div>
-        {{/with}}
+        </div>
+        <hr>
+        <button id="createButton" class="btn btn-success">INSERT</button>
 
-      </div>
-      <div class="panel-footer">
-          <a href="http://www.pentasyllabic.com">pentasyllabic.com</a>
-          <a href="http://github.com/awatson1978/meteor-cookbook">meteor cookbook</a>
       </div>
     </div>
+  <!--</div>-->
+</template>
 
-    <hr>
+<template name="secondContentPanel">
+  <!--<div class="with-top-padding">-->
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <label for="findRecordByIdInput">ID To Find</label>
+        <input id="findRecordByIdInput" type="text" class="form-control" placeholder="3r09nvt988n8gefijv9jr" />
+        <hr>
+        <button id="readButton" class="btn btn-success">FIND</button>
+      </div>
+    </div>
+  <!--</div>-->
+</template>
+<template name="thirdContentPanel">
+  <!--<div class="with-top-padding">-->
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <label for="updateRecordByIdInput">ID To Update</label>
+        <input id="updateRecordByIdInput" type="text" class="form-control" placeholder="3r09nvt988n8gefijv9jr" />
+        <div class="row">
+          <div class="col col-md-6">
+            <label for="titleUpdateInput">Title</label>
+            <input id="titleUpdateInput" type="text" class="form-control" placeholder="lorem ipsum..." />
+          </div>
+          <div class="col col-md-6">
+            <label for="textUpdateInput">Text</label>
+            <input id="textUpdateInput" type="text" class="form-control" placeholder="lorem ipsum..." />
+          </div>
+        </div>
+        <hr>
+        <button id="updateButton" class="btn btn-success">UPDATE</button>
+      </div>
+    </div>
+  <!--</div>-->
+</template>
+<template name="fourthContentPanel">
+  <!--<div class="with-top-padding">-->
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <label for="deleteRecordByIdInput">ID To Delete</label>
+        <input id="deleteRecordByIdInput" type="text" class="form-control" placeholder="3r09nvt988n8gefijv9jr" />
+        <hr>
+        <button id="deleteButton" class="btn btn-success">DELETE</button>
+      </div>
+    </div>
+  <!--</div>-->
+</template>
+<template name="fifthContentPanel">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <button id="listButton" class="btn btn-success">LIST</button>
+    </div>
+  </div>
+</template>
 
-    <ul class="list-group">
-      {{#each postsList }}
-      <li class="list-group-item">
-        {{title}} - {{text}}
-      </li>
-      {{/each}}
-    </ul>
 
 
+
+<template name="databaseCollection">
+  <div class="panel panel-default panel-success">
+    <div class="panel-heading">
+      <h4>DATABASE COLLECTION</h4>
+    </div>
+    <div class="panel-body">
+      <table class="table table-bordered">
+        <thead class="bold">
+        <td>
+          ID
+        </td>
+        <td>
+          Title
+        </td>
+        <td>
+          Text
+        </td>
+        </thead>
+        <tbody>
+        {{#each postsList }}
+        <tr>
+          <td width="33%">
+            {{ _id._str }}
+          </td>
+          <td width="33%">
+            {{title}}
+          </td>
+          <td width="33%">
+            {{text}}
+          </td>
+        </tr>
+        {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</template>
+
+
+<template name="restApi">
+  <div class="panel panel-default panel-info">
+    <div class="panel-heading">
+        <h4>REST API</h4>
+    </div>
+    <div class="panel-body">
+      <div class="col col-lg-12">
+        <ul class="nav nav-tabs">
+          <li id="fifthPanelTab" class="{{fifthContentPanelActive}}"><a href="#fifthPanel" data-toggle="tab">List</a></li>
+          <li id="firstPanelTab" class="{{firstContentPanelActive}}"><a href="#firstPanel" data-toggle="tab">Insert</a></li>
+          <li id="secondPanelTab" class="{{secondContentPanelActive}}"><a href="#secondPanel" data-toggle="tab">Find</a></li>
+          <li id="thirdPanelTab" class="{{thirdContentPanelActive}}"><a href="#thirdPanel" data-toggle="tab">Update</a></li>
+          <li id="fourthPanelTab" class="{{fourthContentPanelActive}}"><a href="#fourthPanel" data-toggle="tab">Delete</a></li>
+        </ul>
+
+        <div id="firstContentPanel" class="{{firstContentPanelVisibility}}">
+          {{> firstContentPanel }}
+        </div>
+        <div id="secondContentPanel" class="{{secondContentPanelVisibility}}">
+          {{> secondContentPanel }}
+        </div>
+        <div id="thirdContentPanel" class="{{thirdContentPanelVisibility}}">
+          {{> thirdContentPanel }}
+        </div>
+        <div id="fourthContentPanel" class="{{fourthContentPanelVisibility}}">
+          {{> fourthContentPanel }}
+        </div>
+        <div id="fifthContentPanel" class="{{fifthContentPanelVisibility}}">
+          {{> fifthContentPanel }}
+        </div>
+      </div>
+      {{#if isResponseVisible }}
+        <div class="col col-lg-12">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              {{ displayResponse }}
+            </div>
+          </div>
+        </div>
+      {{/if}}
+    </div>
+
+  </div>
+</template>
+
+<template name="restStats">
+  <div class="panel panel-default panel-warning">
+    <div class="panel-heading">
+      <ul class="list-inline">
+        <li><h4>REST API STATISTICS</h4></li>
+        <li class="pull-right"><h4>{{getServerAddress}}</h4></li>
+      </ul>
+    </div>
+    <div class="panel-body">
+      {{#with getConfigurationRecord}}
+      <div class="col col-lg-4">
+        <div id="rootPanelTile" class="centered panel panel-default">
+          <div class="count-text">{{getRootCount}}</div>
+          <div class="label-text">/</div>
+        </div>
+      </div>
+      <div class="col col-lg-4">
+        <div id="findPanelTile" class="centered panel panel-default">
+          <div class="count-text">{{getGetCount}}</div>
+          <div class="label-text">/find/</div>
+        </div>
+      </div>
+      <div class="col col-lg-4">
+        <div id="listPanelTile" id="rootPanelTile" class="centered panel panel-default">
+          <div class="count-text">{{getListCount}}</div>
+          <div class="label-text">/list/</div>
+        </div>
+      </div>
+      <div class="col col-lg-4">
+        <div id="insertPanelTile" class="centered panel panel-default">
+          <div class="count-text">{{getInsertCount}}</div>
+          <div class="label-text">/insert/</div>
+        </div>
+      </div>
+      <div class="col col-lg-4">
+        <div id="updatePanelTile" class="centered panel panel-default">
+          <div class="count-text">{{getUpdateCount}}</div>
+          <div class="label-text">/update/</div>
+        </div>
+      </div>
+      <div class="col col-lg-4">
+        <div id="deletePanelTile" class="centered panel panel-default">
+          <div class="count-text">{{getDeleteCount}}</div>
+          <div class="label-text">/delete/</div>
+        </div>
+      </div>
+      {{/with}}
+
+    </div>
+    <div class="panel-footer">
+      <a href="http://www.pentasyllabic.com">pentasyllabic.com</a>
+      <a href="http://github.com/awatson1978/meteor-cookbook">meteor cookbook</a>
+
+    </div>
   </div>
 </template>

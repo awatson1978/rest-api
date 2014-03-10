@@ -51,8 +51,6 @@ Meteor.startup(function(){
       text: "iple fessle prax."
     });
 
-
   };
-
 });
 
