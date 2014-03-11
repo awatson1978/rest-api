@@ -22,13 +22,13 @@
     <favorites_list name="api-rest" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.55009454">
+    <splitter split-orientation="horizontal" split-proportion="0.53780717">
       <split-first>
         <leaf>
-          <file leaf-file-name="main.html" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="main.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/client/main.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="14" column="26" selection-start="187" selection-end="187" vertical-scroll-proportion="0.26888603" vertical-offset="0" max-vertical-offset="3840">
+                <state line="28" column="0" selection-start="399" selection-end="399" vertical-scroll-proportion="-17.5" vertical-offset="0" max-vertical-offset="3840">
                   <folding />
                 </state>
               </provider>
@@ -70,6 +70,15 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="server.methods.js" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/server/server.methods.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="13" column="3" selection-start="281" selection-end="281" vertical-scroll-proportion="0.2383863" vertical-offset="0" max-vertical-offset="818">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="server.publications.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/server/server.publications.js">
               <provider selected="true" editor-type-id="text-editor">
@@ -83,10 +92,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/client/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="88" column="34" selection-start="2986" selection-end="2986" vertical-scroll-proportion="0.5797101" vertical-offset="840" max-vertical-offset="3915">
+                <state line="90" column="28" selection-start="3097" selection-end="3097" vertical-scroll-proportion="0.615942" vertical-offset="840" max-vertical-offset="3915">
                   <folding />
                 </state>
               </provider>
@@ -112,16 +121,16 @@
         <option value="$PROJECT_DIR$/model.js" />
         <option value="$PROJECT_DIR$/client/main.less" />
         <option value="$PROJECT_DIR$/server/server.publications.js" />
-        <option value="$PROJECT_DIR$/server/server.methods.js" />
         <option value="$PROJECT_DIR$/client/main.js" />
         <option value="$PROJECT_DIR$/server/server.api.js" />
         <option value="$PROJECT_DIR$/client/main.html" />
+        <option value="$PROJECT_DIR$/server/server.methods.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1225" />
-    <option name="y" value="357" />
+    <option name="x" value="1258" />
+    <option name="y" value="138" />
     <option name="width" value="1307" />
     <option name="height" value="989" />
   </component>
@@ -272,7 +281,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1225" y="357" width="1307" height="989" extended-state="0" />
+    <frame x="1258" y="138" width="1307" height="989" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -394,16 +403,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/server.methods.js">
+    <entry file="file://$PROJECT_DIR$/client/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="3" selection-start="181" selection-end="181" vertical-scroll-proportion="0.15807962" vertical-offset="0" max-vertical-offset="854">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="34" selection-start="2986" selection-end="2986" vertical-scroll-proportion="0.5797101" vertical-offset="840" max-vertical-offset="3915">
+        <state line="28" column="0" selection-start="399" selection-end="399" vertical-scroll-proportion="-17.5" vertical-offset="0" max-vertical-offset="3840">
           <folding />
         </state>
       </provider>
@@ -415,9 +417,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/main.html">
+    <entry file="file://$PROJECT_DIR$/server/server.methods.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="26" selection-start="187" selection-end="187" vertical-scroll-proportion="0.26888603" vertical-offset="0" max-vertical-offset="3840">
+        <state line="13" column="3" selection-start="281" selection-end="281" vertical-scroll-proportion="0.2383863" vertical-offset="0" max-vertical-offset="818">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="28" selection-start="3097" selection-end="3097" vertical-scroll-proportion="0.615942" vertical-offset="840" max-vertical-offset="3915">
           <folding />
         </state>
       </provider>

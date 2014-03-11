@@ -4,7 +4,11 @@ Meteor.methods({
   },
   getRootUrl: function(){
     var url = process.env.ROOT_URL;
-    console.log(url);
-    return url;
+    var result = url;
+    if(url == 'http://localhost:3000'){
+      result = url + "/";
+    }
+    console.log(result);
+    return result;
   }
 });
