@@ -12,9 +12,9 @@ Router.map(function () {
       console.log('------------------------------');
 
       this.response.statusCode = 200;
-      this.response.setHeader("content-type", "application/javascript");
+      this.response.setHeader("Content-Type", "application/json");
       this.response.setHeader("Access-Control-Allow-Origin", "*");
-      this.response.setHeader("Access-Control-Allow-Header", "Origin, X-Requested-With, Content-Type, Accept");
+      this.response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
       if (this.request.method == 'GET') {
         // LIST
@@ -34,6 +34,10 @@ Router.map(function () {
         this.response.end(JSON.stringify(
           Posts.insert(this.request.body)
         ));
+      }else if (this.request.method == 'OPTIONS') {
+        // OPTIONS
+        this.response.setHeader("Access-Control-Allow-Methods", "POST, PUT, GET, DELETE, OPTIONS");
+        this.response.end("OPTIONS Response");
       }
     }
   });
@@ -51,10 +55,13 @@ Router.map(function () {
       console.log('------------------------------');
 
       this.response.statusCode = 200;
-      this.response.setHeader("content-type", "application/javascript");
+      this.response.setHeader("Content-Type", "application/json");
       this.response.setHeader("Access-Control-Allow-Origin", "*");
-      this.response.setHeader("Access-Control-Allow-Header", "Origin, X-Requested-With, Content-Type, Accept");
+      this.response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
+      //Access-Control-Allow-Origin: http://foo.example
+      //Access-Control-Allow-Methods: POST, GET, OPTIONS
+      //Access-Control-Allow-Headers: X-PINGOTHER
 
       if (this.request.method == 'GET') {
         // FIND
@@ -87,6 +94,10 @@ Router.map(function () {
         this.response.end(JSON.stringify(
           Posts.remove({_id: new Meteor.Collection.ObjectID(this.params.id) })
         ));
+      }else if (this.request.method == 'OPTIONS') {
+        // OPTIONS
+        this.response.setHeader("Access-Control-Allow-Methods", "POST, PUT, GET, DELETE, OPTIONS");
+        this.response.end("OPTIONS Response With Parameter");
       }
     }
   });
