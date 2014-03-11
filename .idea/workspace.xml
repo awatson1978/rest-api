@@ -70,10 +70,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="server.methods.js" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="server.methods.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/server/server.methods.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="13" column="3" selection-start="281" selection-end="281" vertical-scroll-proportion="0.2383863" vertical-offset="0" max-vertical-offset="818">
+                <state line="7" column="12" selection-start="170" selection-end="170" vertical-scroll-proportion="0.12836185" vertical-offset="0" max-vertical-offset="818">
                   <folding />
                 </state>
               </provider>
@@ -92,7 +92,7 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/client/main.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="90" column="28" selection-start="3097" selection-end="3097" vertical-scroll-proportion="0.615942" vertical-offset="840" max-vertical-offset="3915">
@@ -417,16 +417,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/server.methods.js">
+    <entry file="file://$PROJECT_DIR$/client/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="3" selection-start="281" selection-end="281" vertical-scroll-proportion="0.2383863" vertical-offset="0" max-vertical-offset="818">
+        <state line="90" column="28" selection-start="3097" selection-end="3097" vertical-scroll-proportion="0.615942" vertical-offset="840" max-vertical-offset="3915">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/main.js">
+    <entry file="file://$PROJECT_DIR$/server/server.methods.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="28" selection-start="3097" selection-end="3097" vertical-scroll-proportion="0.615942" vertical-offset="840" max-vertical-offset="3915">
+        <state line="7" column="12" selection-start="170" selection-end="170" vertical-scroll-proportion="0.12836185" vertical-offset="0" max-vertical-offset="818">
           <folding />
         </state>
       </provider>
