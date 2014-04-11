@@ -5,7 +5,7 @@ Meteor.methods({
   getRootUrl: function(){
     var url = process.env.ROOT_URL;
     var result = url;
-    if(url != 'http://localhost:3000'){
+    if(url != 'http://localhost:3000' && !/\/$/.test(url)){
       result = url + "/";
     }
     console.log(result);
