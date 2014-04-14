@@ -1,8 +1,7 @@
 rest-api
 ========
 
-REST API for Meteor, using Iron Router.
-
+REST API for Meteor, using Iron Router.  You can find an online demo at http://rest-api.meteor.com/  
 
 Installation
 ------------------------
@@ -17,7 +16,7 @@ sudo mrt
 ````
 
 
-TODO LIST
+Todo List  
 ------------------------
 - resolve issue with Content-Type on POST
 - finish display of CRUD pattern via client
@@ -30,9 +29,3 @@ Licensing
 MIT License. Use as you wish, including for commercial purposes.
 See license.mit.txt for full details.
 
-
-Support
-------------------------
-Found this package to be useful?  Consider tipping the package maintainer for their time!  
-
-[![Support via Gittip](https://raw.github.com/gittip/www.gittip.com/master/www/assets/gittip.png)](https://www.gittip.com/awatson1978/)  
