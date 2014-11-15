@@ -1,7 +1,7 @@
 rest-api
 ========
 
-REST API for Meteor, using Iron Router.  
+REST API for Meteor, using Iron Router.  See the [rest-api demo app](https://github.com/awatson1978/rest-api).  
 
 Installation
 ------------------------
