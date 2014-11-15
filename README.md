@@ -12,20 +12,12 @@ Installation
 git clone https://github.com/awatson1978/rest-api.git
 
 # And then running it...
-sudo mrt
+cd rest-api
+meteor
 ````
-
-
-Todo List  
-------------------------
-- resolve issue with Content-Type on POST
-- finish display of CRUD pattern via client
-- add textInput field
-- add idInput field
 
 
 Licensing
 ------------------------
 MIT License. Use as you wish, including for commercial purposes.
-See license.mit.txt for full details.
 
