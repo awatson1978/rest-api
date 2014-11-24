@@ -4,10 +4,6 @@ Session.setDefault('apiResponse', false);
 
 
 Meteor.startup(function(){
-  // Meteor.call('getRootUrl', function(error, result){
-  //   console.log('getRootUrl: ' + result);
-  //   Session.set('serverUrl', result);
-  // });
   console.log('Meteor.absoluteUrl: ', Meteor.absoluteUrl());
   Session.set('serverUrl', Meteor.absoluteUrl());
 });
