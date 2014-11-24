@@ -5,9 +5,8 @@
 
 standard-app-packages
 insecure
-preserve-inputs
-iron-router
-bootstrap-3
 less
-browser-policy-framing
 http
+mrt:bootstrap-3
+iron:router
+

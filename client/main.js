@@ -1,16 +1,28 @@
 Session.setDefault('serverUrl', "---");
+Session.setDefault('apiResponse', false);
+
+
+
 Meteor.startup(function(){
-  Meteor.call('getRootUrl', function(error, result){
-    console.log('getRootUrl: ' + result);
-    Session.set('serverUrl', result);
-  });
+  // Meteor.call('getRootUrl', function(error, result){
+  //   console.log('getRootUrl: ' + result);
+  //   Session.set('serverUrl', result);
+  // });
+  console.log('Meteor.absoluteUrl: ', Meteor.absoluteUrl());
+  Session.set('serverUrl', Meteor.absoluteUrl());
 });
 
 Router.configure({
-  layoutTemplate: 'mainLayout'
+  layoutTemplate: 'appLayout'
 });
 
-Template.mainPage.events({
+
+
+//----------------------------------------------------------
+// MAIN PAGE
+
+
+Template.homePage.events({
   'click #listButton':function(){
     console.count('click #listButton');
     //var newRecordId = Math.random().toString(36).slice(2,26);
@@ -98,7 +110,7 @@ Template.mainPage.events({
   }
 });
 
-Template.mainPage.getServerAddress = function(){
+Template.homePage.getServerAddress = function(){
   if(Session.get('serverUrl')){
     return Session.get('serverUrl');
   }else{
@@ -108,15 +120,11 @@ Template.mainPage.getServerAddress = function(){
 
 
 
-Template.databaseCollection.postsList = function(){
-  return Posts.find();
-}
-
 
 //----------------------------------------------------------
-// REST API TESTER
+// REST API CARD
 
-Session.setDefault('selectedPanel', 1);
+Session.setDefault('selectedPanel', 5);
 
 Template.restApi.events({
   'click #firstPanelTab':function(){
@@ -141,116 +149,154 @@ Template.restApi.events({
   }
 });
 
-Template.restApi.firstContentPanelActive = function(){
-  if(Session.get('selectedPanel') === 1){
-    return "active panel-tab";
-  }else{
-    return "panel-tab";
+
+Template.restApi.helpers({
+  firstContentPanelActive: function(){
+    if(Session.get('selectedPanel') === 1){
+      return "active panel-tab";
+    }else{
+      return "panel-tab";
+    }
+  },
+  secondContentPanelActive: function () {
+    if(Session.get('selectedPanel') === 2){
+      return "active panel-tab";
+    }else{
+      return "panel-tab";
+    }
+  },
+  thirdContentPanelActive: function () {
+    if(Session.get('selectedPanel') === 3){
+      return "active panel-tab";
+    }else{
+      return "panel-tab";
+    }
+  },
+  fourthContentPanelActive: function () {
+    if(Session.get('selectedPanel') === 4){
+      return "active panel-tab";
+    }else{
+      return "panel-tab";
+    }
+  },
+  fifthContentPanelActive: function () {
+    if(Session.get('selectedPanel') === 5){
+      return "active panel-tab";
+    }else{
+      return "panel-tab";
+    }
+  },
+  firstContentPanelVisibility: function () {
+    if(Session.get('selectedPanel') === 1){
+      return "visible";
+    }else{
+      return "hidden";
+    }
+  },
+  secondContentPanelVisibility: function () {
+    if(Session.get('selectedPanel') === 2){
+      return "visible";
+    }else{
+      return "hidden";
+    }
+  },
+  thirdContentPanelVisibility: function () {
+    if(Session.get('selectedPanel') === 3){
+      return "visible";
+    }else{
+      return "hidden";
+    }
+  },
+  fourthContentPanelVisibility: function () {
+    if(Session.get('selectedPanel') === 4){
+      return "visible";
+    }else{
+      return "hidden";
+    }
+  },
+  fifthContentPanelVisibility: function () {
+    if(Session.get('selectedPanel') === 5){
+      return "visible";
+    }else{
+      return "hidden";
+    }
+  },
+  getCurrentPanel: function () {
+    return Session.get('selectedPanel');
+  },
+  displayResponse: function () {
+    return Session.get('apiResponse');
+  },
+  isResponseVisible: function () {
+    if(Session.get('apiResponse')){
+      return true;
+    }else{
+      return false;
+    }
+  },
+  isInterfacePanelVisible: function () {
+    if(Session.get('isInterfacePanelVisible')){
+      return "hidden";
+    }else{
+      return "visible";
+    }
   }
-}
-Template.restApi.secondContentPanelActive= function(){
-  if(Session.get('selectedPanel') === 2){
-    return "active panel-tab";
-  }else{
-    return "panel-tab";
-  }
-}
-Template.restApi.thirdContentPanelActive= function(){
-  if(Session.get('selectedPanel') === 3){
-    return "active panel-tab";
-  }else{
-    return "panel-tab";
-  }
-}
-Template.restApi.fourthContentPanelActive= function(){
-  if(Session.get('selectedPanel') === 4){
-    return "active panel-tab";
-  }else{
-    return "panel-tab";
-  }
-}
-Template.restApi.fifthContentPanelActive= function(){
-  if(Session.get('selectedPanel') === 5){
-    return "active panel-tab";
-  }else{
-    return "panel-tab";
-  }
-}
+});
 
 
-Template.restApi.firstContentPanelVisibility = function(){
-  if(Session.get('selectedPanel') === 1){
-    return "visible";
-  }else{
-    return "hidden";
-  }
-}
-Template.restApi.secondContentPanelVisibility = function(){
-  if(Session.get('selectedPanel') === 2){
-    return "visible";
-  }else{
-    return "hidden";
-  }
-}
-Template.restApi.thirdContentPanelVisibility = function(){
-  if(Session.get('selectedPanel') === 3){
-    return "visible";
-  }else{
-    return "hidden";
-  }
-}
-Template.restApi.fourthContentPanelVisibility = function(){
-  if(Session.get('selectedPanel') === 4){
-    return "visible";
-  }else{
-    return "hidden";
-  }
-}
-Template.restApi.fifthContentPanelVisibility = function(){
-  if(Session.get('selectedPanel') === 5){
-    return "visible";
-  }else{
-    return "hidden";
-  }
-}
-Template.restApi.getCurrentPanel = function(){
-  return Session.get('selectedPanel');
-}
-Template.restApi.displayResponse = function(){
-  return Session.get('apiResponse');
-}
-Session.setDefault('apiResponse', false);
-Template.restApi.isResponseVisible = function(){
-  if(Session.get('apiResponse')){
-    return true;
-  }else{
-    return false;
-  }
-}
+
+
+
+
 
 
 //----------------------------------------------------------
 // REST API STATISTICS
 
-Template.restStats.getConfigurationRecord = function(){
-  return Statistics.findOne({_id: 'configuration'});
-}
+Template.restStats.helpers({
+  getConfigurationRecord: function(){
+    return Statistics.findOne({_id: 'configuration'});
+  },
+  getRootCount: function () {
+    return this.total_count;
+  },
+  getGetCount: function () {
+    return this.get_count;
+  },
+  getListCount: function () {
+    return this.list_count;
+  },
+  getInsertCount: function () {
+    return this.insert_count;
+  },
+  getUpdateCount: function () {
+    return this.update_count;
+  },
+  getDeleteCount: function () {
+    return this.delete_count;
+  },
+  isStatisticsPanelVisible: function () {
+    if(Session.get('isStatisticsPanelVisible')){
+      return "hidden";
+    }else{
+      return "visible";
+    }
+  }
+});
 
-Template.restStats.getRootCount = function(){
-  return this.total_count;
-}
-Template.restStats.getGetCount = function(){
-  return this.get_count;
-}
-Template.restStats.getListCount = function(){
-  return this.list_count;
-}
-Template.restStats.getInsertCount = function(){
-  return this.insert_count;
-}
-Template.restStats.getUpdateCount = function(){
-  return this.update_count;
-}
-Template.restStats.getDeleteCount = function(){
-  return this.delete_count;
-}
+
+//----------------------------------------------------------
+// DATABASE COLLECTION
+
+Template.databaseCollection.helpers({
+  postsList: function(){
+    return Posts.find();
+  },
+  isDatabasePanelVisible: function () {
+    if(Session.get('isDatabasePanelVisible')){
+      return "hidden";
+    }else{
+      return "visible";
+    }
+  }
+});

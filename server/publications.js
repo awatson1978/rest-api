@@ -1,7 +1,4 @@
-BrowserPolicy.framing.allowAll();
-//BrowserPolicy.content.allowSameOriginForAll();
-//BrowserPolicy.content.allowDataUrlForAll();
-//BrowserPolicy.content.allowDataUrlForAll("http://localhost");
+
 
 
 Meteor.startup(function(){
@@ -33,7 +30,10 @@ Meteor.startup(function(){
       'update_count': 0,
       'delete_count': 0,
       'get_count': 0,
-      'insert_count': 0
+      'insert_count': 0,
+      'is_statistics_panel_visible': true,
+      'is_interface_panel_visible': true,
+      'is_database_panel_visible': true
     })
   };
 

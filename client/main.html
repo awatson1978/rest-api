@@ -2,28 +2,24 @@
   <title>api-rest</title>
 </head>
 
-<body>
-  {{ mainLayout }}
-</body>
 
-<template name="mainLayout">
-  {{ yield }}
+
+<template name="appLayout">
+  <main id="appLayout">
+    {{> headerNavBar }}
+    {{> yield }}
+    {{> footerNavBar}}
+  </main>
 </template>
 
 
-<template name="mainPage">
-  <div class="col col-md-6">
-    <div class="padded">
-      {{> restStats }}
-      {{> restApi }}
-    </div>
-  </div>
-  <div class="col col-md-6">
-    <div class="padded">
-      {{> databaseCollection }}
-    </div>
-  </div>
 
+<template name="homePage">
+  <div id="homePage" class="container page">
+    {{> restStats }}
+    {{> restApi }}
+    {{> databaseCollection }}
+  </div>
 </template>
 
 
@@ -110,7 +106,7 @@
 
 
 <template name="databaseCollection">
-  <div class="panel panel-default panel-success">
+  <div id="databaseCollectionPanel" class="panel panel-default panel-success {{isDatabasePanelVisible}}">
     <div class="panel-heading">
       <h4>DATABASE COLLECTION</h4>
     </div>
@@ -149,7 +145,7 @@
 
 
 <template name="restApi">
-  <div class="panel panel-default panel-info">
+  <div id="restApiPanel" class="panel panel-default panel-info {{isInterfacePanelVisible}}">
     <div class="panel-heading">
         <h4>REST API</h4>
     </div>
@@ -194,7 +190,7 @@
 </template>
 
 <template name="restStats">
-  <div class="panel panel-default panel-warning">
+  <div id="restStatsPanel" class="panel panel-default panel-warning {{isStatisticsPanelVisible}}">
     <div class="panel-heading">
       <ul class="list-inline">
         <li><h4>REST API STATISTICS</h4></li>
@@ -203,37 +199,37 @@
     </div>
     <div class="panel-body">
       {{#with getConfigurationRecord}}
-      <div class="col col-lg-6">
+      <div class="col col-lg-4">
         <div id="rootPanelTile" class="centered panel panel-default">
           <div class="count-text">{{getRootCount}}</div>
           <div class="label-text">/</div>
         </div>
       </div>
-      <div class="col col-lg-6">
+      <div class="col col-lg-4">
         <div id="findPanelTile" class="centered panel panel-default">
           <div class="count-text">{{getGetCount}}</div>
           <div class="label-text">/find/</div>
         </div>
       </div>
-      <div class="col col-lg-6">
-        <div id="listPanelTile" id="rootPanelTile" class="centered panel panel-default">
+      <div class="col col-lg-4">
+        <div id="listPanelTile" class="centered panel panel-default">
           <div class="count-text">{{getListCount}}</div>
           <div class="label-text">/list/</div>
         </div>
       </div>
-      <div class="col col-lg-6">
+      <div class="col col-lg-4">
         <div id="insertPanelTile" class="centered panel panel-default">
           <div class="count-text">{{getInsertCount}}</div>
           <div class="label-text">/insert/</div>
         </div>
       </div>
-      <div class="col col-lg-6">
+      <div class="col col-lg-4">
         <div id="updatePanelTile" class="centered panel panel-default">
           <div class="count-text">{{getUpdateCount}}</div>
           <div class="label-text">/update/</div>
         </div>
       </div>
-      <div class="col col-lg-6">
+      <div class="col col-lg-4">
         <div id="deletePanelTile" class="centered panel panel-default">
           <div class="count-text">{{getDeleteCount}}</div>
           <div class="label-text">/delete/</div>

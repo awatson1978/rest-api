@@ -1,0 +1,22 @@
+<template name="headerNavBar">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="centered">
+      <ul class="list-inline">
+        <li><a id="restApiTitle" class="navbar-brand" href="#">REST API</a></li>
+      </ul>
+    </div>
+  </nav>
+</template>
+
+
+<template name="footerNavBar">
+  <div id="navBarFooter" class="navbar navbar-default navbar-fixed-bottom">
+    <div class="centered">
+      <ul class="list-inline">
+        <li id="statisticsButton"><a href="#" class="btn {{getStatisticsVisibility}}">Statistics</a></li>
+        <li id="interfaceButton"><a href="#" class="btn {{getInterfaceVisibility}}">Interface</a></li>
+        <li id="databaseButton"><a href="#" class="btn {{getDatabaseVisibility}}">Database</a></li>
+      </ul>
+    </div>
+  </div>
+</template>
