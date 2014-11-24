@@ -19,7 +19,7 @@ Router.route('/login/:loginToken/posts', function(){
   // console.log('------------------------------');
 
   if(this.params.loginToken){
-    Meteor.users.find({'services.resume.loginTokens': this.params.loginToken}){
+    if(Meteor.users.findOne({'services.resume.loginTokens': this.params.loginToken})){
 
       // the loginToken checks out, lets proceed with forming a valid response
       // and parsing the request
@@ -76,7 +76,7 @@ Router.route('/login/:loginToken/posts/:postId', function(){
   // console.log('------------------------------');
 
   if(this.params.loginToken){
-    Meteor.users.find({'services.resume.loginTokens': this.params.loginToken}){
+    if(Meteor.users.findOne({'services.resume.loginTokens': this.params.loginToken})){
 
       // the loginToken checks out, lets proceed with forming a valid response
       // and parsing the request

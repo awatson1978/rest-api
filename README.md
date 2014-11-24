@@ -1,11 +1,9 @@
-rest-api
-========
+## rest-api
 
 REST API for Meteor, using Iron Router.  
 
-Installation
-------------------------
-
+======================
+#### Installation
 
 ````sh
 # Should be as simple as cloning the repository...  
@@ -16,8 +14,13 @@ cd rest-api
 meteor
 ````
 
+======================
+#### Files of Interest  
 
-Licensing
-------------------------
+The REST API demo is essentially server-side functionality.  Even though the demo exposes some client-side UI (which might be interesting in-of-itself), the files of interest are in the /server/rest directory. 
+
+https://github.com/awatson1978/rest-api/tree/master/server/rest
+
+======================
+#### Licensing  
 MIT License. Use as you wish, including for commercial purposes.
-
