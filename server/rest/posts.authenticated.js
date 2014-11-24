@@ -1,4 +1,6 @@
 //==============================================================================
+// EXPERIMENTAL
+// The following code is experimental and not fully tested.
 
 // api:      http://localhost:3000/login/:loginToken/posts
 // example:  http://localhost:3000/login/12345/posts

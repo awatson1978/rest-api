@@ -1,4 +1,5 @@
 //==============================================================================
+// the following is a vanilla REST API that uses the entire HTTP protocol
 
 // api:      http://localhost:3000/posts
 // example:  http://localhost:3000/posts
