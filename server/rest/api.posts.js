@@ -35,7 +35,7 @@ Router.route('/api/insert/post', function(){
 
 // api:      http://localhost:3000/api/find/post/:postId
 // example:  http://localhost:3000/api/find/post/314159
-Router.route('/posts/:postId', function(){
+Router.route('api/find/posts/:postId', function(){
   this.response.statusCode = 200;
   this.response.setHeader("Content-Type", "application/json");
   this.response.setHeader("Access-Control-Allow-Origin", "*");
