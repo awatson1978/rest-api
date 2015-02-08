@@ -35,13 +35,13 @@ Router.route('/api/insert/post', function(){
 
 // api:      http://localhost:3000/api/find/post/:postId
 // example:  http://localhost:3000/api/find/post/314159
-Router.route('/api/find/posts/:postId', function(){
+Router.route('/api/find/post/:postId', function(){
   this.response.statusCode = 200;
   this.response.setHeader("Content-Type", "application/json");
   this.response.setHeader("Access-Control-Allow-Origin", "*");
   this.response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   this.response.end('Post contents... ' + JSON.stringify(
-    Posts.findOne({_id: new Meteor.Collection.ObjectID(this.params.postId) })
+    Posts.findOne({_id: this.params.postId })
   ));
 }, {where: 'server'});
 
@@ -55,7 +55,7 @@ Router.route('/api/update/post/:postId', function(){
   this.response.setHeader("Access-Control-Allow-Origin", "*");
   this.response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   this.response.end('Result of updating post is ' + JSON.stringify(
-    Posts.update({_id: new Meteor.Collection.ObjectID(this.params.postId) },{$set:{
+    Posts.update({_id: this.params.postId },{$set:{
       title: this.request.body.title,
       text: this.request.body.text
     }})
@@ -71,6 +71,6 @@ Router.route('/api/delete/post/:postId', function(){
   this.response.setHeader("Access-Control-Allow-Origin", "*");
   this.response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   this.response.end('Result of deleting post is ' + JSON.stringify(
-    Posts.remove({_id: new Meteor.Collection.ObjectID(this.params.postId) })
+    Posts.remove({_id: this.params.postId })
   ));
 }, {where: 'server'});

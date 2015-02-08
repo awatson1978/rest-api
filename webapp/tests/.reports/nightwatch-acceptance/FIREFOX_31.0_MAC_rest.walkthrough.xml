@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="rest.walkthrough"
+             errors="0"
+             failures="0"
+             tests="10">
+  
+  <testsuite errors="0" failures="0" hostname="" id=""
+    name="REST API Walkthrough" package="rest.walkthrough" skipped="0"
+    tests="10" time="" timestamp="">
+    
+    
+      <testcase name="Element &lt;body&gt; was visible after 72 milliseconds.">
+        
+        
+      </testcase>
+    
+      <testcase name="Testing if element &lt;body&gt; contains text: &quot;Found some posts...&quot;.">
+        
+        
+      </testcase>
+    
+      <testcase name="Element &lt;body&gt; was visible after 21 milliseconds.">
+        
+        
+      </testcase>
+    
+      <testcase name="Testing if element &lt;body&gt; contains text: &quot;New post has an ID of&quot;.">
+        
+        
+      </testcase>
+    
+      <testcase name="Element &lt;body&gt; was visible after 20 milliseconds.">
+        
+        
+      </testcase>
+    
+      <testcase name="Testing if element &lt;body&gt; contains text: &quot;Post contents...&quot;.">
+        
+        
+      </testcase>
+    
+      <testcase name="Element &lt;body&gt; was visible after 18 milliseconds.">
+        
+        
+      </testcase>
+    
+      <testcase name="Testing if element &lt;body&gt; contains text: &quot;Result of updating post is&quot;.">
+        
+        
+      </testcase>
+    
+      <testcase name="Element &lt;body&gt; was visible after 22 milliseconds.">
+        
+        
+      </testcase>
+    
+      <testcase name="Testing if element &lt;body&gt; contains text: &quot;Result of deleting post is&quot;.">
+        
+        
+      </testcase>
+    
+    
+    </testsuite>
+  
+</testsuites>
